@@ -1,0 +1,267 @@
+/* ========================== */
+/*  VARIÁVEIS GLOBAIS */
+/* Define cores reutilizáveis no projeto */
+/* ========================== */
+:root {
+  --cor-principal: #38bdf8; /* Cor principal (azul) usada em títulos e botões */
+  --cor-fundo: #0f172a; /* Cor de fundo principal (escuro) */
+  --cor-fundo-sec: #1e293b; /* Cor secundária (cards e elementos) */
+  --cor-texto: #f1f5f9; /* Cor padrão do texto */
+}
+
+/* ========================== */
+/*  RESET BÁSICO */
+/* Remove margens e paddings padrão do navegador */
+/* ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif; /* Define fonte padrão */
+}
+
+/* ========================== */
+/*  BODY */
+/* Define fundo geral e cor do texto */
+/* ========================== */
+body {
+  background: linear-gradient(120deg, var(--cor-fundo), var(--cor-fundo-sec)); /* Fundo em degradê */
+  color: var(--cor-texto); /* Cor do texto */
+  line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* ========================== */
+/*  HEADER */
+/* Estiliza o topo da página */
+/* ========================== */
+header {
+  background: rgba(15, 23, 42, 0.9); /* Fundo semi-transparente */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  padding: 15px 30px; /* Espaçamento interno */
+  position: sticky; /* Fixa no topo ao rolar */
+  top: 0;
+}
+
+/* ========================== */
+/*  NAV */
+/* Organiza menu com Flexbox */
+/* ========================== */
+nav {
+  display: flex; /* Ativa Flexbox */
+  justify-content: space-between; /* Espaço entre logo e menu */
+  align-items: center; /* Alinha verticalmente */
+}
+
+/* Nome no topo */
+nav h1 {
+  color: var(--cor-principal); /* Cor azul */
+  font-size: 24px;
+}
+
+/* Lista do menu */
+nav ul {
+  display: flex; /* Itens lado a lado */
+  list-style: none; /* Remove bolinhas */
+  gap: 20px; /* Espaçamento entre itens */
+}
+
+/* Links do menu */
+nav a {
+  text-decoration: none; /* Remove sublinhado */
+  color: var(--cor-texto);
+  transition: 0.3s; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+  color: var(--cor-principal); /* Muda para azul */
+}
+
+/*  SEÇÕES */
+/* Define espaçamento das seções */
+
+section {
+  padding: 60px 20px;
+  max-width: 900px; /* Limita largura */
+  margin: auto; /* Centraliza */
+}
+
+/* Títulos das seções */
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--cor-principal);
+  border-left: 4px solid var(--cor-principal); /* Barra lateral decorativa */
+  padding-left: 10px;
+}
+
+/*  SOBRE */
+/* Centraliza conteúdo da seção */
+
+#sobre {
+  text-align: center;
+}
+
+/* Imagem do perfil */
+#sobre img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Deixa imagem circular */
+  margin: 20px auto; /* Centraliza imagem */
+  display: block;
+  border: 3px solid var(--cor-principal); /* Borda azul */
+  object-fit: cover; /* Ajusta imagem ao espaço */
+}
+
+/*  PROJETOS */
+/* Cria layout em grade com Flexbox */
+
+#projetos {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha */
+  justify-content: center; /* Centraliza cards */
+  gap: 20px; /* Espaçamento entre cards */
+}
+
+/* Card de projeto */
+#projetos article {
+  background: var(--cor-fundo-sec); /* Fundo do card */
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  width: 280px;
+}
+
+/* Efeito hover no card */
+#projetos article:hover {
+  transform: translateY(-5px); /* Levanta o card */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra */
+}
+
+/* Links dos projetos */
+#projetos a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--cor-principal);
+  text-decoration: none;
+}
+
+/* Hover no link */
+#projetos a:hover {
+  text-decoration: underline;
+}
+
+/*  FORMULÁRIO */
+/* Estiliza inputs e layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Campos de entrada */
+input, textarea {
+  width: 100%; /* Ocupa toda largura */
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* Área de mensagem */
+textarea {
+  resize: none; /* Remove redimensionamento */
+  height: 100px;
+}
+
+/* Botão */
+button {
+  background: var(--cor-principal);
+  color: #0f172a;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover botão */
+button:hover {
+  background: #0ea5e9;
+}
+
+/* ========================== */
+/*  FOOTER */
+/* Estiliza rodapé */
+/* ========================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--cor-fundo-sec); /* Usa variável */
+  margin-top: 30px;
+  color: var(--cor-texto);
+}
+
+/*  RESPONSIVO */
+/* Ajustes para telas pequenas */
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column; /* Empilha elementos */
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #projetos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*  TEMA CLARO */
+/* Ativado via JavaScript */
+
+.dark-theme {
+  background: #f1f5f9; /* Fundo claro */
+  color: #0f172a; /* Texto escuro */
+}
+
+/* Header no tema claro */
+.dark-theme header {
+  background: rgb(214, 217, 219);
+}
+
+/* Links no tema claro */
+.dark-theme nav a {
+  color: #0f172a;
+}
+
+/* Cards no tema claro */
+.dark-theme #projetos article {
+  background: #e2e8f0;
+}
+
+/* Rodapé no tema claro */
+.dark-theme footer {
+  background: #646161;
+}
+
+/* Inputs no tema claro */
+.dark-theme input,
+.dark-theme textarea {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Botão de tema */
+#temaBtn {
+  padding: 6px 22px;
+  font-size: 14px;
+}
+
+
+
